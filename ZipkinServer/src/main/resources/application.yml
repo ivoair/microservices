@@ -1,0 +1,20 @@
+server:
+  port: 6500
+
+spring:
+  zipkin:
+    enabled: true
+
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:6100/eureka/
+      
+info:
+  name: Zipkin Server
+  description: Zipkin Server Application       
+  version: 1.0.0
+  

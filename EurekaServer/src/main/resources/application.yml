@@ -1,0 +1,18 @@
+server:
+  port: 6100
+  
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      
+info:
+  name: Eureka Server
+  description: Eureka Server Application       
+  version: 1.0.0
+  
