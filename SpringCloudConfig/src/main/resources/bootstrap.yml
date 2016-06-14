@@ -1,8 +1,26 @@
 spring:
   application:
-    name: configserver
+    name: Config-Server
   cloud:
     config:
+      name: configserver
       server:
         git:
           uri: https://github.com/ivoair/microservices-config
+        bootstrap: true
+  zipkin:
+    enabled: true
+    base-url: http://localhost:6500
+        
+server:
+  port: 6200
+  
+management:
+  context-path: /admin
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:6100/eureka/        

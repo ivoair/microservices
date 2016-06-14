@@ -1,3 +1,19 @@
 spring:
   application:
     name: Zipkin-Server
+  zipkin:
+    enabled: true
+  cloud:
+    config:
+      uri: http://localhost:6200
+      name: zipkinserver
+      
+server:
+  port: 6500
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:6100/eureka/
