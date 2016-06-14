@@ -1,0 +1,5 @@
+server:
+  port: 6200
+  
+management:
+  context-path: /admin

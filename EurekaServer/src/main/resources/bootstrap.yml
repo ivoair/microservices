@@ -1,3 +1,21 @@
 spring:
   application:
-    name: Eureka-Server
+    name: eurekaserver
+  cloud:
+    config:
+      uri: http://localhost:6200
+      name: eurekaserver
+
+server:
+  port: 6100
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      
+      
