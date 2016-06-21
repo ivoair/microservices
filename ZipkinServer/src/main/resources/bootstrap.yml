@@ -3,6 +3,7 @@ spring:
     name: Zipkin-Server
   zipkin:
     enabled: true
+    base-url: http://localhost:6500
   cloud:
     config:
       uri: http://localhost:6200

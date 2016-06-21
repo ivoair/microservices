@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: Admin-Server
+  cloud:
+    config:
+      uri: http://localhost:6200
+      name: adminserver
+    
+server:
+  port: 6300
+  
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:6100/eureka/

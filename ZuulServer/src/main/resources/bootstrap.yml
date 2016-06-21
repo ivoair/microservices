@@ -3,13 +3,14 @@ spring:
     name: Zuul-Server
   zipkin:
     enabled: true
+    base-url: http://localhost:6500
   cloud:
     config:
       uri: http://localhost:6200
       name: zuulserver
       
 server:
-  port: 6300
+  port: 6001
 
 eureka:
   client:
