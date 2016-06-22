@@ -6,8 +6,8 @@ spring:
       uri: http://localhost:6200
       name: eurekaserver
   zipkin:
-    enabled: true
-    base-url: http://localhost:6500
+    enabled: false
+    #base-url: http://localhost:6500
 
 server:
   port: 6100
@@ -24,4 +24,20 @@ eureka:
   server:
     enable-self-preservation: true
     waitTimeInMsWhenSyncEmpty: 0
-     
+
+MICROSERVICE1:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    # refresh every minute 
+    ServerListRefreshInterval: 60000
+    # movieservice is the virtual address that the target server(s) uses to register with Eureka server
+    DeploymentContextBasedVipAddresses: MICROSERVICE1
+
+MICROSERVICE2:
+  ribbon:
+    NIWSServerListClassName: com.netflix.niws.loadbalancer.DiscoveryEnabledNIWSServerList
+    # refresh every minute 
+    ServerListRefreshInterval: 60000
+    # movieservice is the virtual address that the target server(s) uses to register with Eureka server
+    DeploymentContextBasedVipAddresses: MICROSERVICE2
+       

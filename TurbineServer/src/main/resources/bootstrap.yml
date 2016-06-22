@@ -1,22 +1,17 @@
 spring:
   application:
-    name: Config-Server
+    name: Turbine-Server
   cloud:
     config:
-      name: configserver
-      server:
-        git:
-          uri: https://github.com/ivoair/microservices-config
-        bootstrap: true
+      enabled: true
+      name: turbineserver
+      uri: http://localhost:6200
   zipkin:
     enabled: false
     #base-url: http://localhost:6500
-        
+
 server:
-  port: 6200
-  
-management:
-  context-path: /admin
+  port: 6400
 
 eureka:
   client:
@@ -24,4 +19,8 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:6100/eureka/
+      
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: MICROSERVICE1,MICROSERVICE2      
       

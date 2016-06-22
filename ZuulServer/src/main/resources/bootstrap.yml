@@ -2,8 +2,8 @@ spring:
   application:
     name: Zuul-Server
   zipkin:
-    enabled: true
-    base-url: http://localhost:6500
+    enabled: false
+    #base-url: http://localhost:6500
   cloud:
     config:
       uri: http://localhost:6200
@@ -13,9 +13,19 @@ server:
   port: 6001
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
   client:
-    registerWithEureka: true
-    fetchRegistry: false
+    registryFetchIntervalSeconds: 5
     serviceUrl:
       defaultZone: http://localhost:6100/eureka/
    
+zuul:
+  ignored-services: '*'
+  routes:
+    test:
+      path: /app/**
+      serviceId: MICROSERVICE1

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: MicroService2
+  cloud:
+    config:
+      uri: http://localhost:6200
+      name: microservice2
+  zipkin:
+    enabled: true
+    base-url: http://localhost:6500
+          
+server:
+  port: 6602
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:6100/eureka/

@@ -2,8 +2,8 @@ spring:
   application:
     name: Zipkin-Server
   zipkin:
-    enabled: true
-    base-url: http://localhost:6500
+    enabled: false
+    #base-url: http://localhost:6500
   cloud:
     config:
       uri: http://localhost:6200
@@ -15,6 +15,6 @@ server:
 eureka:
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:6100/eureka/
