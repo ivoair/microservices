@@ -6,6 +6,7 @@ spring:
       name: configserver
       server:
         git:
+#          uri: file://C:/tmp/microservices-config
           uri: https://github.com/ivoair/microservices-config
         bootstrap: true
   zipkin:
@@ -15,8 +16,8 @@ spring:
 server:
   port: 6200
   
-management:
-  context-path: /admin
+#management:
+#  context-path: /admin
 
 eureka:
   client:
@@ -24,4 +25,3 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://localhost:6100/eureka/
-      

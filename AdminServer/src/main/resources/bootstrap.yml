@@ -1,3 +1,6 @@
+server:
+  port: 6300
+  
 spring:
   application:
     name: Admin-Server
@@ -5,9 +8,6 @@ spring:
     config:
       uri: http://localhost:6200
       name: adminserver
-    
-server:
-  port: 6300
   
 eureka:
   client:
