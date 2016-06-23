@@ -16,11 +16,13 @@ server:
 eureka:
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:6100/eureka/
       
 turbine:
   clusterNameExpression: new String("default")
-  appConfig: MICROSERVICE1,MICROSERVICE2      
+  #http://localhost:6400/turbine.stream 
+  #http://localhost:6400/turbine.stream?cluster=default 
+  appConfig: MICROSERVICE1,MICROSERVICE2
       

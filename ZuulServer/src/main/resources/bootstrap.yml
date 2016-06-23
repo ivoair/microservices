@@ -2,8 +2,8 @@ spring:
   application:
     name: Zuul-Server
   zipkin:
-    enabled: false
-    #base-url: http://localhost:6500
+    enabled: true
+    base-url: http://localhost:6500
   cloud:
     config:
       uri: http://localhost:6200

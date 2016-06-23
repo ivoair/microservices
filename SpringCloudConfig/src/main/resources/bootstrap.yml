@@ -6,8 +6,8 @@ spring:
       name: configserver
       server:
         git:
-#          uri: file://C:/tmp/microservices-config
-          uri: https://github.com/ivoair/microservices-config
+          uri: file://C:/tmp/microservices-config
+          #uri: https://github.com/ivoair/microservices-config
         bootstrap: true
   zipkin:
     enabled: false
