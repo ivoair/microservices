@@ -10,11 +10,11 @@ Pequeña PoC en la que integrar las diferentes herramientas que conforman una **
 Además se han creado dos microservicios simples que realizan una llamada entre ellos para validar el comportamiento de Feign.
 - **Microservice1:** 6601 
   - Endpoints: 
-    - / -> Home: Hello World!!!
-    - /random -> Genera un número aleatorio
-    - /randomeven -> Indica si un número generado aleatoriamente es par
+    - _/_  >  Home: Hello World!!!
+    - _/random_  >  Genera un número aleatorio
+    - _/randomeven_  >  Indica si un número generado aleatoriamente es par
 - **Microservice2:** 6602 
   - Endpoints:
-    - /even/{value} -> Indica si el número pasado como parámetro es par
+    - _/even/{value}_  >  Indica si el número pasado como parámetro es par
 
 **TODO:** Integrar sistema de log (ELK).
